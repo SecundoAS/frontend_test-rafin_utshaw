@@ -19,8 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AppLayout />
-
-        {children}
+        <div className="flex justify-center">
+          <div className="container mt-8">{children}</div>
+        </div>
       </body>
     </html>
   );

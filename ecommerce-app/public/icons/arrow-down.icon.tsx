@@ -1,8 +1,16 @@
-export const ArrowDownIcon: React.FC = () => {
+type ArrowDownIconType = {
+  size?: number;
+};
+
+export const ArrowDownIcon: React.FC<ArrowDownIconType> = (
+  props: ArrowDownIconType
+) => {
+  const { size = 12 } = props;
+
   return (
     <svg
-      width="12"
-      height="8"
+      width={size}
+      height={size * 0.66}
       viewBox="0 0 12 8"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
