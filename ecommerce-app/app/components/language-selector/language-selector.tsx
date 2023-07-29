@@ -14,13 +14,12 @@ export const LanguageSelector: React.FC = () => {
   ];
 
   const [selected, setSelected] = useState(languages[0]);
-  const [query, setQuery] = useState("");
 
   return (
     <div className="">
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+          <Listbox.Button className="relative w-full border rounded-lg bg-white py-2 px-3 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate">{selected.name}</span>
           </Listbox.Button>
           <Transition
@@ -35,22 +34,14 @@ export const LanguageSelector: React.FC = () => {
                   key={lang.id}
                   className={({ active }) =>
                     `relative cursor-default select-none p-2 ${
-                      active ? "bg-amber-100 text-amber-900" : "text-gray-900"
+                      active ? "bg-red-400" : "text-black-400"
                     }`
                   }
                   value={lang}
                 >
-                  {({ selected }) => (
+                  {({}) => (
                     <>
-                      <span
-                        className={`block truncate ${
-                          selected.id === lang.id
-                            ? "font-medium"
-                            : "font-normal"
-                        }`}
-                      >
-                        {lang.name}
-                      </span>
+                      <span className={`block truncate`}>{lang.name}</span>
                     </>
                   )}
                 </Listbox.Option>

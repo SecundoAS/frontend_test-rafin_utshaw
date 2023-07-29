@@ -1,12 +1,13 @@
-import HeartIcon from "@/public/icons/heart.icon";
-import UserIcon from "@/public/icons/user.icon";
+import CartIcon from "@/public/icons/cart.icon";
+import Link from "next/link";
 import React from "react";
 
 export const HeaderActions: React.FC = () => {
   return (
-    <div className="grid gap-4 grid-cols-2 items-center">
-      <UserIcon />
-      <HeartIcon />
+    <div className="grid gap-4 grid-cols-1 items-center ">
+      <Link className="cursor-pointer" href="#">
+        <CartIcon />
+      </Link>
     </div>
   );
 };
