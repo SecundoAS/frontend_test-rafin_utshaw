@@ -10,7 +10,7 @@ export type Product = {
   description: string;
   created_at: string;
   google_review: {
-    rate: "4,8/5";
-    text: "Google Reviews";
+    rate: string;
+    text: string;
   };
 };
