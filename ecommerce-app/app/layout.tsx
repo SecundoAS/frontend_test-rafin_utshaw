@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import AppFooter from "./components/app-footer/app-footer";
 import AppLayout from "./components/app-layout";
 import "./globals.css";
 
@@ -21,10 +22,12 @@ export default function RootLayout({
         <div className="fixed bg-white w-full z-10">
           <AppLayout />
         </div>
-        <div className="flex justify-center pt-24">
-          <div className="container mt-8">{children}</div>
+        <div className="flex justify-center pt-32">
+          <div className="container">{children}</div>
         </div>
       </body>
+
+      <AppFooter />
     </html>
   );
 }

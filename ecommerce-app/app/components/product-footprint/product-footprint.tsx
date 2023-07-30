@@ -8,9 +8,9 @@ export const ProductFootPrint: React.FC<ProductFootPrintType> = (
   const { title, lifeSpan, returnPolicy } = props;
 
   return (
-    <div className={" shadow-md rounded p-2"}>
+    <div className={"shadow-md rounded p-2"}>
       <div className="font-bold text-xl mb-4"> {title}</div>
-      <div className="flex">
+      <div className="sm:flex md:block lg:flex">
         <div className="flex items-start">
           <Image
             alt="Lifespan logo"
@@ -20,10 +20,10 @@ export const ProductFootPrint: React.FC<ProductFootPrintType> = (
           />
           <div className="ml-2">
             <div className="font-bold">{lifeSpan.title}</div>
-            <div>{lifeSpan.description}</div>
+            <div className="text-justify">{lifeSpan.description}</div>
           </div>
         </div>
-        <div className=" ml-2 flex items-start">
+        <div className="md:ml-0 ml-2 flex items-start">
           <Image
             alt="Return policy logo"
             src={returnPolicy.icon}
@@ -32,7 +32,7 @@ export const ProductFootPrint: React.FC<ProductFootPrintType> = (
           />
           <div className="ml-2">
             <div className="font-bold">{returnPolicy.title}</div>
-            <div>{returnPolicy.description}</div>
+            <div className="text-justify">{returnPolicy.description}</div>
           </div>
         </div>
       </div>

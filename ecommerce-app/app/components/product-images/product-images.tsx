@@ -82,7 +82,7 @@ export const ProductImages: React.FC<ProductImagesType> = (
   };
 
   return state.productImages?.length > 0 ? (
-    <div className="flex">
+    <div className="flex sticky top-32">
       <div className="mr-4">
         <div
           onClick={() => scrollUpdate(true)}
@@ -142,8 +142,8 @@ export const ProductImages: React.FC<ProductImagesType> = (
                           ? open
                           : () => {}
                       }
-                      className={`mb-2 block mr-auto w-full h-full mb-2 bg-no-repeat bg-contain bg-center ${
-                        state.isMediaReady ? "" : "cursor-wait"
+                      className={`block mr-auto w-full h-full mb-2 bg-no-repeat bg-contain bg-center ${
+                        state.isMediaReady ? "cursor-zoom-in" : "cursor-wait"
                       } ${
                         state.isMediaReady &&
                         item.url_link != AppImages.ProductPlaceholder

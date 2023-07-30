@@ -33,7 +33,9 @@ export const ProductInfo: React.FC<Product> = (props: Product) => {
         discountPrice={props.discounted_price}
         currency={props.currency}
       />
-      <div className="my-8 text-gray-400 text-sm">{props.description}</div>
+      <div className="my-8 text-gray-400 text-sm text-justify">
+        {props.description}
+      </div>
       <div className="flex justify-between">
         <div className="flex">
           <button
