@@ -2,6 +2,8 @@
 import CartIcon from "@/public/icons/cart.icon";
 import HeartIcon from "@/public/icons/heart.icon";
 import { useMemo, useState } from "react";
+import Card from "../generic-components/card/card";
+import Pill from "../generic-components/pill/pill";
 import { ProductCardType } from "./product-card.types";
 
 export const ProductCard: React.FC<ProductCardType> = (
@@ -30,9 +32,9 @@ export const ProductCard: React.FC<ProductCardType> = (
   };
 
   return (
-    <div className="shadow-md rounded h-80 p-2 text-sm flex flex-col">
-      <span className="absolute p-1 text-xs rounded-full bg-red-400">
-        {label}
+    <Card className="h-80 text-sm flex flex-col">
+      <span className="absolute">
+        <Pill>{label}</Pill>
       </span>
 
       <div
@@ -55,8 +57,10 @@ export const ProductCard: React.FC<ProductCardType> = (
       <div className="flex justify-between items-center">
         <div className="flex">
           <button className="bg-gray-200 rounded flex items-center p-2 text-sm mr-2">
-            <CartIcon size={16} />{" "}
-            <div className="ml-2 whitespace-nowrap"> Add to cart</div>
+            <CartIcon size={16} />
+            <div className="hidden lg:block ml-2 whitespace-nowrap">
+              Add to cart
+            </div>
           </button>
           <button>
             <HeartIcon />
@@ -68,7 +72,7 @@ export const ProductCard: React.FC<ProductCardType> = (
             : "Out of stock"}
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

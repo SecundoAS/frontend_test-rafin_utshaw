@@ -10,7 +10,7 @@ export const ProductAttributes: React.FC<ProductAttributesType> = (
   const { attributes } = props;
 
   return (
-    <div className="rounded shadow-md p-2">
+    <div className="p-2">
       <div className="text-xl font-bold mb-2">Attributes</div>
       <div className="grid grid-cols-2 gap-4 text-sm text-gray-500">
         {attributes.map((item: AttributeItem) => {

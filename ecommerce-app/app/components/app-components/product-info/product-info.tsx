@@ -1,5 +1,7 @@
 import HeartIcon from "@/public/icons/heart.icon";
 import { useMemo } from "react";
+import Card from "../generic-components/card/card";
+import Pill from "../generic-components/pill/pill";
 import GoogleReview from "../google-review/google-review";
 import { PriceInfo } from "../price-info/price-info";
 import { Product } from "./product-info.types";
@@ -16,10 +18,10 @@ export const ProductInfo: React.FC<Product> = (props: Product) => {
   }, [google_review.rate]);
 
   return (
-    <div className="shadow-md rounded p-2">
-      <span className="px-2 py-1 text-xs rounded-full bg-red-400">
+    <Card>
+      <Pill>
         {props.category} {!!props.subcategory && `| ${props.subcategory}`}
-      </span>
+      </Pill>
       <div className="font-bold text-lg">{props.name}</div>
       <div
         className={` my-2 text-sm font-bold italic ${
@@ -54,7 +56,7 @@ export const ProductInfo: React.FC<Product> = (props: Product) => {
         </div>
         <GoogleReview rate={rate} maxRate={maxRate} />
       </div>
-    </div>
+    </Card>
   );
 };
 

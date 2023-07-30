@@ -16,12 +16,12 @@ export default function Product() {
         </div>
         <div className="md:w-1/2  w-full grid grid-cols-1 gap-4">
           <ProductInfo {...product} />
-          <ProductAttributes attributes={product.attributes} />
           <ProductFootPrint
             title={foot_print.title}
             lifeSpan={foot_print.life_span}
             returnPolicy={foot_print.return_policy}
           />
+          <ProductAttributes attributes={product.attributes} />
         </div>
       </div>
       <RelatedProducts products={similar_product.products} />

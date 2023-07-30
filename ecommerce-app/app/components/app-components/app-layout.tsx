@@ -1,8 +1,8 @@
+import { AppImages } from "@/app/utils/constants";
 import HeartIcon from "@/public/icons/heart.icon";
 import UserIcon from "@/public/icons/user.icon";
 import Image from "next/image";
 import Link from "next/link";
-import { AppImages } from "../utils/constants";
 import AppSearchbox from "./app-searchbox/app-searchbox";
 import HeaderActions from "./header-actions/header-actions";
 import { HeaderMenu } from "./header-menu/header-menu";
