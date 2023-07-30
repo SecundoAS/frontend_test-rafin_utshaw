@@ -3,6 +3,7 @@ import DiscordIcon from "@/public/icons/discord.icon";
 import FacebookIcon from "@/public/icons/facebook.icon";
 import GithubIcon from "@/public/icons/github.icon";
 import TwitterIcon from "@/public/icons/twitter.icon";
+import Image from "next/image";
 import Link from "next/link";
 
 export const AppFooter = () => {
@@ -12,7 +13,7 @@ export const AppFooter = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link href="/" className="flex items-center">
-              <img
+              <Image
                 src={AppImages.applogo}
                 className="h-8 mr-3"
                 alt="Transcom Digital"

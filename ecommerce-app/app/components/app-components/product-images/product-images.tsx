@@ -22,21 +22,6 @@ export const ProductImages: React.FC<ProductImagesType> = (
   });
   const scrollElement = useRef<any>(null);
 
-  useEffect(() => {
-    let currentImages: ProductImage[] =
-      images.length > 0 ? images : [{ url_link: AppImages.ProductPlaceholder }];
-    const newState = {
-      ...state,
-      productImages: currentImages,
-      isMediaReady: false,
-      selectedImage: currentImages[0].url_link
-        ? currentImages[0].url_link
-        : AppImages.ProductPlaceholder,
-    };
-    setState(newState);
-    setMeta(newState);
-  }, [images]);
-
   const setMeta = (currentState = state) => {
     let currentImages = currentState.productImages;
     let newImages: any[] = [];
@@ -66,6 +51,21 @@ export const ProductImages: React.FC<ProductImagesType> = (
       };
     });
   };
+
+  useEffect(() => {
+    let currentImages: ProductImage[] =
+      images.length > 0 ? images : [{ url_link: AppImages.ProductPlaceholder }];
+    const newState = {
+      ...state,
+      productImages: currentImages,
+      isMediaReady: false,
+      selectedImage: currentImages[0].url_link
+        ? currentImages[0].url_link
+        : AppImages.ProductPlaceholder,
+    };
+    setState(newState);
+    setMeta(newState);
+  }, [images, state, setMeta]);
 
   const scrollUpdate = (isUp: boolean = true) => {
     const value = isUp ? -144 : 144;
