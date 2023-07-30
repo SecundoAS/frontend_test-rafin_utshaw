@@ -17,6 +17,8 @@ export const AppFooter = () => {
                 src={AppImages.applogo}
                 className="h-8 mr-3"
                 alt="Transcom Digital"
+                height={30}
+                width={140}
               />
             </Link>
           </div>

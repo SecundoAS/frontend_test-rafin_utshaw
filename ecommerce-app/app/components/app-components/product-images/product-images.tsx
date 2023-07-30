@@ -65,7 +65,7 @@ export const ProductImages: React.FC<ProductImagesType> = (
     };
     setState(newState);
     setMeta(newState);
-  }, [images, state, setMeta]);
+  }, [images]);
 
   const scrollUpdate = (isUp: boolean = true) => {
     const value = isUp ? -144 : 144;
