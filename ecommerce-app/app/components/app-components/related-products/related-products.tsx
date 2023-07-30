@@ -9,10 +9,10 @@ import { RelatedProductType } from "./related-products.types";
 export const RelatedProducts: React.FC<RelatedProductType> = (
   props: RelatedProductType
 ) => {
-  const { products } = props;
+  const { products, header } = props;
   return (
     <div className="">
-      <div className="font-bold text-xl mb-4">Related Products</div>
+      <div className="font-bold text-xl mb-4">{header}</div>
       <Glider
         draggable
         hasDots

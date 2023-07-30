@@ -36,7 +36,10 @@ export default function Product() {
               <ProductAttributes attributes={data.product.attributes} />
             </div>
           </div>
-          <RelatedProducts products={data.similar_product.products} />
+          <RelatedProducts
+            header={data.similar_product.header}
+            products={data.similar_product.products}
+          />
         </>
       )}
     </div>

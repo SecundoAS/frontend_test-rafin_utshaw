@@ -1,4 +1,5 @@
 {
-    "helloWorld": "Salut le Monde!",
-    "happyYear": "Bonne année {{ year }}!"
+    "add_to_cart": "Legg i handlekurv",
+    "in_stock": "på lager",
+    "out_of_stock": "Utsolgt"
 }

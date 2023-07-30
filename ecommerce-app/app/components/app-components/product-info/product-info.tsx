@@ -1,6 +1,7 @@
 import HeartIcon from "@/public/icons/heart.icon";
 import { useMemo } from "react";
 
+import { useTranslations } from "next-intl";
 import Card from "../../generic-components/card/card";
 import Pill from "../../generic-components/pill/pill";
 import GoogleReview from "../google-review/google-review";
@@ -9,6 +10,7 @@ import { Product } from "./product-info.types";
 
 export const ProductInfo: React.FC<Product> = (props: Product) => {
   const { google_review } = props;
+  const t = useTranslations();
 
   const rate: number = useMemo(() => {
     return Number(google_review.rate.split("/")[0].split(",").join("."));
@@ -29,7 +31,9 @@ export const ProductInfo: React.FC<Product> = (props: Product) => {
           props.amount > 0 ? "text-green-400" : "text-red-400"
         }`}
       >
-        {props.amount > 0 ? `${props.amount} in stock` : "Out of stock"}
+        {props.amount > 0
+          ? `${props.amount} ${t("in_stock")}`
+          : t("out_of_stock")}
       </div>
       <PriceInfo
         originalPrice={props.selling_price - props.discounted_price}
@@ -49,7 +53,7 @@ export const ProductInfo: React.FC<Product> = (props: Product) => {
                 : "bg-red-500"
             } px-3 py-2 text-white`}
           >
-            Add to cart
+            {t("add_to_cart")}
           </button>
           <button className="border p-2 ml-2">
             <HeartIcon />
