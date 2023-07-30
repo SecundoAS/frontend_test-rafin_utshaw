@@ -25,9 +25,8 @@ export default function RootLayout({
         <div className="flex justify-center pt-32">
           <div className="container">{children}</div>
         </div>
+        <AppFooter />
       </body>
-
-      <AppFooter />
     </html>
   );
 }

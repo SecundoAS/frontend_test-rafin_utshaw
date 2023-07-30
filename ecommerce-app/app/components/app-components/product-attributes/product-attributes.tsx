@@ -15,7 +15,7 @@ export const ProductAttributes: React.FC<ProductAttributesType> = (
       <div className="grid grid-cols-2 gap-4 text-sm text-gray-500">
         {attributes.map((item: AttributeItem) => {
           return (
-            <div className={""}>
+            <div key={item.attribute}>
               <span className="font-bold">{item.attribute}:</span>{" "}
               <span>{item.value}</span>
             </div>

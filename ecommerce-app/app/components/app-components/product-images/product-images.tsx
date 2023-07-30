@@ -95,10 +95,10 @@ export const ProductImages: React.FC<ProductImagesType> = (
           ref={scrollElement}
           style={{ scrollBehavior: "smooth" }}
         >
-          {state.productImages.map((item, index) => {
+          {state.productImages.map((item) => {
             return (
               <div
-                key={index}
+                key={item.thumbnail_link}
                 className="w-16 h-16 border-2 border-light-blue-600 cursor-pointer bg-contain bg-no-repeat bg-center"
                 style={{
                   backgroundImage: `url(${item.thumbnail_link})`,
@@ -117,10 +117,10 @@ export const ProductImages: React.FC<ProductImagesType> = (
       </div>
       {enableZoom ? (
         <Gallery>
-          {state.productImages?.map((item, index) => {
+          {state.productImages?.map((item) => {
             return (
               <Item
-                key={index}
+                key={item.url_link}
                 original={item.url_link}
                 width={item.original_weight}
                 height={item.original_height}

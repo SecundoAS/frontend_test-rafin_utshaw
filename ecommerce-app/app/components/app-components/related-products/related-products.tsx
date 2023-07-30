@@ -47,6 +47,7 @@ export const RelatedProducts: React.FC<RelatedProductType> = (
       >
         {products.map((item: ProductCardItem, index) => (
           <div
+            key={item.title}
             className={`
             ${index == 0 && products.length == 1 && ""} 
             ${index == 0 && products.length > 1 && "pr-2"}

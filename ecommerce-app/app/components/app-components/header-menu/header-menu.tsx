@@ -16,7 +16,7 @@ export const HeaderMenu: React.FC = () => {
 
   return (
     <>
-      {menu.map((category: Category) => (
+      {menu.map((category: Category, categoryIndex: number) => (
         <Menu
           as="div"
           className="relative inline-block text-left"
@@ -41,7 +41,7 @@ export const HeaderMenu: React.FC = () => {
           >
             <Menu.Items className="absolute left-0 mt-2 w-56 origin-top-left divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               {category.items.map((item: string) => (
-                <Menu.Item key={item}>
+                <Menu.Item key={`${item}${categoryIndex}`}>
                   {({ active }) => (
                     <Link
                       className={`${
