@@ -1,26 +1,34 @@
 "use client";
 import { Listbox, Transition } from "@headlessui/react";
+import { usePathname as useLocalePathname, useRouter } from "next-intl/client";
+import { usePathname } from "next/navigation";
 import { Fragment, useState } from "react";
 
-type Language = {
-  id: number;
-  name: string;
-};
-
 export const LanguageSelector: React.FC = () => {
-  const languages: Language[] = [
-    { id: 1, name: "EN" },
-    { id: 2, name: "NO" },
-  ];
+  const pathname = usePathname();
+  const localePathName = useLocalePathname();
+  const router = useRouter();
+  const locales: string[] = ["EN", "NO"];
+  const localeToLang: any = {
+    "/": "en",
+    "/no": "no",
+  };
 
-  const [selected, setSelected] = useState(languages[0]);
+  const activeLocale: string = localeToLang[pathname];
+
+  const [selected, setSelected] = useState(activeLocale.toUpperCase());
+
+  const onLanguageChange = (lang: string) => {
+    router.replace(localePathName, { locale: lang.toLowerCase() });
+    setSelected(lang);
+  };
 
   return (
     <div className="">
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox value={selected} onChange={onLanguageChange}>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full border rounded-lg bg-white py-2 px-3 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-            <span className="block truncate">{selected.name}</span>
+            <span className="block truncate">{selected}</span>
           </Listbox.Button>
           <Transition
             as={Fragment}
@@ -29,9 +37,9 @@ export const LanguageSelector: React.FC = () => {
             leaveTo="opacity-0"
           >
             <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {languages.map((lang) => (
+              {locales.map((lang) => (
                 <Listbox.Option
-                  key={lang.id}
+                  key={lang}
                   className={({ active }) =>
                     `relative cursor-default select-none p-2 ${
                       active ? "bg-red-400" : "text-black-400"
@@ -41,7 +49,7 @@ export const LanguageSelector: React.FC = () => {
                 >
                   {({}) => (
                     <>
-                      <span className={`block truncate`}>{lang.name}</span>
+                      <span className={`block truncate`}>{lang}</span>
                     </>
                   )}
                 </Listbox.Option>

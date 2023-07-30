@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../generic-components/card/card";
+import Card from "../../generic-components/card/card";
 import FootPrintItem from "./footprint-item";
 import { ProductFootPrintType } from "./product-footprint.types";
 

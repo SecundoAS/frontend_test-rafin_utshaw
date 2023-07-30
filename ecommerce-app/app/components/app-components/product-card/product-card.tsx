@@ -2,8 +2,9 @@
 import CartIcon from "@/public/icons/cart.icon";
 import HeartIcon from "@/public/icons/heart.icon";
 import { useMemo, useState } from "react";
-import Card from "../generic-components/card/card";
-import Pill from "../generic-components/pill/pill";
+
+import Card from "../../generic-components/card/card";
+import Pill from "../../generic-components/pill/pill";
 import { ProductCardType } from "./product-card.types";
 
 export const ProductCard: React.FC<ProductCardType> = (

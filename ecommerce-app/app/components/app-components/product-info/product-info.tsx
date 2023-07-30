@@ -1,7 +1,8 @@
 import HeartIcon from "@/public/icons/heart.icon";
 import { useMemo } from "react";
-import Card from "../generic-components/card/card";
-import Pill from "../generic-components/pill/pill";
+
+import Card from "../../generic-components/card/card";
+import Pill from "../../generic-components/pill/pill";
 import GoogleReview from "../google-review/google-review";
 import { PriceInfo } from "../price-info/price-info";
 import { Product } from "./product-info.types";
